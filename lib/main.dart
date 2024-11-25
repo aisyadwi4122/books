@@ -93,7 +93,15 @@ void returnFG() {
       result = total.toString();
     });
   });
+
+  final future = Future.wait<int>([
+    returnOneAsync(),
+    returnTwoAsync(),
+    returnThreeAsync(),
+]);
 }
+
+
 
 
   @override

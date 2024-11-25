@@ -43,3 +43,20 @@ Kode tersebut adalah contoh penggunaan Future, yang memanfaatkan metode then dan
 6. Memanggil Future secara paralel
 W11:soal 7
 ![alt text](image-6.png)
+
+-Jelaskan maksud perbedaan kode langkah 1 dan 4!
+langkah 1
+pada file main.dart ditambahka method "returnFG()" kedalam class FuturePageState yang mengguanakan FutureGroup umtuk menangani beberapa operasi asynchronous secara bersamaan dan menghitung total hasilnya.
+langkah 2
+pada onPresssed hapus atau nonaktifkan kode sebelumnya dan panggil method returnFG() yang telah ditambahkan pada langkah 1 untuk menangani logika pemrosesan asynchrounus.
+langkah 3
+menjalankan aplikasi denga perintah run dan perhatikan hasilnya yang berupa angka 6 muncul dalam wktu 3 detik,lebih cepat dibanding praktikum sebelumnya yang membutuhkan waktu 9 detik
+langkah 4
+Mengganti penggunaan FutureGroup dengan Future.wait mengubah cara penanganan operasi asynchronous
+PERBEDAAN
+Future.wait
+-Sintaks lebih sederhana dan langsung.
+-Cocok jika jumlah Future sudah diketahui.
+FutureGroup
+-Fleksibel untuk menambah Future secara dinamis saat runtime.
+-Berguna untuk skenario di mana jumlah operasi asynchronous tidak diketahui sebelumnya.
