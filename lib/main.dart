@@ -101,6 +101,11 @@ void returnFG() {
 ]);
 }
 
+Future returnError() async {
+  await Future.delayed(const Duration(seconds: 2));
+  throw Exception('Something terrible happened!');
+}
+
 
 
 
@@ -149,10 +154,19 @@ void returnFG() {
                 //     result = 'An error occured';
                 //    });
 
-                returnFG();
+                // returnFG();
 
+                returnError()
+                .then((value){
+                  setState(() {
+                    result = 'Success';
+                  });
+                }).catchError((onError){
+                  setState(() {
+                    result = onError.toString();
+                  });
+                }).whenComplete(() => print('complete'));
                 
-              
               },
             ),
             const Spacer(),

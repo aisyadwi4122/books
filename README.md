@@ -44,6 +44,7 @@ Kode tersebut adalah contoh penggunaan Future, yang memanfaatkan metode then dan
 W11:soal 7
 ![alt text](image-6.png)
 
+W11:Soal 8
 -Jelaskan maksud perbedaan kode langkah 1 dan 4!
 langkah 1
 pada file main.dart ditambahka method "returnFG()" kedalam class FuturePageState yang mengguanakan FutureGroup umtuk menangani beberapa operasi asynchronous secara bersamaan dan menghitung total hasilnya.
@@ -60,3 +61,8 @@ Future.wait
 FutureGroup
 -Fleksibel untuk menambah Future secara dinamis saat runtime.
 -Berguna untuk skenario di mana jumlah operasi asynchronous tidak diketahui sebelumnya.
+
+7. Menangani Respon Error pada Async Code
+W11:soal 9
+![alt text](image-7.png)
+
