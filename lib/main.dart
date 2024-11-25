@@ -106,6 +106,20 @@ Future returnError() async {
   throw Exception('Something terrible happened!');
 }
 
+Future handleError() async {
+  try {
+    await returnError();
+  }
+  catch (error) {
+    setState(() {
+      result = error.toString();
+    });
+  }
+  finally {
+    print('complete');
+  }
+}
+
 
 
 
@@ -156,17 +170,28 @@ Future returnError() async {
 
                 // returnFG();
 
-                returnError()
+                // returnError()
+                // .then((value){
+                //   setState(() {
+                //     result = 'Success';
+                //   });
+                // }).catchError((onError){
+                //   setState(() {
+                //     result = onError.toString();
+                //   });
+                // }).whenComplete(() => print('complete'));
+
+                handleError()
                 .then((value){
                   setState(() {
-                    result = 'Success';
+                    result = 'Complete';
                   });
                 }).catchError((onError){
                   setState(() {
                     result = onError.toString();
                   });
                 }).whenComplete(() => print('complete'));
-                
+
               },
             ),
             const Spacer(),

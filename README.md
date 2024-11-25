@@ -65,4 +65,9 @@ FutureGroup
 7. Menangani Respon Error pada Async Code
 W11:soal 9
 ![alt text](image-7.png)
+debug console
+![alt text](image-8.png)
 
+W11:Soal 10
+handle error
+![alt text](image-9.png)
