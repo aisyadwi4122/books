@@ -40,4 +40,6 @@ Kode tersebut adalah fungsi asinkron bernama calculate, yang menggunakan blok tr
 - Langkah 6 :
 Kode tersebut adalah contoh penggunaan Future, yang memanfaatkan metode then dan catchError untuk menangani hasil sukses atau error dari operasi asinkron.
 
-
+6. Memanggil Future secara paralel
+W11:soal 7
+![alt text](image-6.png)

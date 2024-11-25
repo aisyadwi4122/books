@@ -78,6 +78,24 @@ catch (_) {
   }
 }
 
+void returnFG() {
+  FutureGroup<int> futureGroup = FutureGroup();
+  futureGroup.add(returnOneAsync());
+  futureGroup.add(returnTwoAsync());
+  futureGroup.add(returnThreeAsync());
+  futureGroup.close();
+  futureGroup.future.then((List <int> value) {
+    int total = 0;
+    for (var element in value) {
+      total += element;
+    }
+    setState(() {
+      result = total.toString();
+    });
+  });
+}
+
+
   @override
   Widget build(BuildContext context) {
   Future<Response> getData() async{
@@ -115,13 +133,15 @@ catch (_) {
                 //   });
                 // });
 
-                 getNumber().then((value){
-                    setState(() {
-                       result = value.toString();
-                     });
-                   }).catchError((e) {
-                    result = 'An error occured';
-                   });
+                //  getNumber().then((value){
+                //     setState(() {
+                //        result = value.toString();
+                //      });
+                //    }).catchError((e) {
+                //     result = 'An error occured';
+                //    });
+
+                returnFG();
 
                 
               
